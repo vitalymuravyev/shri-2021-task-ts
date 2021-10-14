@@ -1,12 +1,52 @@
+export type Colors = {
+    black: string;
+    red: string;
+    green: string;
+    yellow: string;
+    blue: string;
+    magenta: string;
+    cyan: string;
+    white: string;
+}
+
+export type Effects = {
+    bright: string;
+    dim: string;
+    italic: string;
+    underscore: string;
+    blink: string;
+}
+
+export type ColorName = {
+    black: keyof Colors;
+    red: keyof Colors;
+    green: keyof Colors;
+    yellow: keyof Colors;
+    blue: keyof Colors;
+    magenta: keyof Colors;
+    cyan: keyof Colors;
+    white: keyof Colors;
+};
+
+export type FontVariants = {
+    font?: keyof Colors;
+    background?: keyof Colors;
+    effects?: [keyof Effects];
+    bold?: boolean;
+    italic?: boolean;
+    mono?: boolean;
+    link?: string;
+};
+
 export const Reset = '\x1b[0m';
-export const effects = {
+export const effects: Effects = {
     bright: '\x1b[1m',
     dim: '\x1b[2m',
     italic: '\x1b[3m',
     underscore: '\x1b[4m',
     blink: '\x1b[5m',
 };
-export const fontColors = {
+export const fontColors: Colors = {
     black: '\x1b[30m',
     red: '\x1b[31m',
     green: '\x1b[32m',
@@ -16,7 +56,7 @@ export const fontColors = {
     cyan: '\x1b[36m',
     white: '\x1b[37m',
 };
-export const backgroundColors = {
+export const backgroundColors: Colors = {
     black: '\x1b[40m',
     red: '\x1b[41m',
     green: '\x1b[42m',
@@ -26,7 +66,7 @@ export const backgroundColors = {
     cyan: '\x1b[46m',
     white: '\x1b[47m',
 };
-export const contrast = {
+export const contrast: ColorName = {
     black: 'white',
     red: 'black',
     green: 'black',

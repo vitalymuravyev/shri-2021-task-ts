@@ -1,15 +1,8 @@
 import { color } from './colors';
 import { markdown } from './md';
-interface Options {
-    font: string,
-    background: string,
-    effects: string[],
-    bold: boolean,
-    italic: boolean,
-    mono: boolean,
-    link: string,
-}
-export function style(text: string, options: Options) {
+import { FontVariants } from './model';
+
+export function style(text: string, options: FontVariants) {
     if (text.length === 0) {
         return text;
     }

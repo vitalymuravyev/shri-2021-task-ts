@@ -1,11 +1,7 @@
 import { color } from './colors';
-interface Options {
-    bold: boolean,
-    italic: boolean,
-    mono: boolean,
-    link: string,
-}
-export function markdown(text:string, options: Options) {
+import { FontVariants } from './model';
+
+export function markdown(text:string, options: FontVariants) {
     let result = text;
     if (options) {
         if (options.bold) {
